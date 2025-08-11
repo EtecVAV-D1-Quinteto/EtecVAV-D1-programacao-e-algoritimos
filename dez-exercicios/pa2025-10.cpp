@@ -52,7 +52,7 @@ int main() {
 
         std::cout << "\nUsar Novamente? (s/n): ";
         std::cin >> n;
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // limpa o buffer
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     }
 
     return 0;
