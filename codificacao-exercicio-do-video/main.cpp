@@ -1,8 +1,38 @@
 #include <iostream>
+#include <string>
+#include <stdio.h>
+#include <cmath>
+#include <cstdlib>
 
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+using namespace std;
 
 int main(int argc, char** argv) {
-	std::cout <<"Hello world";
+	string linha;
+	int primo;
+	bool isprimo;
+	while(true)
+	{
+		getline(cin,linha);
+		if(linha == "0"){
+			break;
+		}
+		
+		primo = atoi(linha.c_str());
+		isprimo = true;
+		
+		for(int i=2; i <= primo; i++)
+		{
+			if(((primo%i)==0)&&(i!=primo))
+			{
+				isprimo=false;
+				break;
+			}
+		}
+		if(primo > 1){
+			if(isprimo){
+				cout<<primo;
+			}
+		}
+	}
 	return 0;
 }
