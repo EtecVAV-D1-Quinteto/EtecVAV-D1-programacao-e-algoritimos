@@ -1,0 +1,10 @@
+# Compilados C++
+*.exe
+*.o
+*.out
+
+# Logs
+*.log
+
+# Diretórios de build
+/build/
