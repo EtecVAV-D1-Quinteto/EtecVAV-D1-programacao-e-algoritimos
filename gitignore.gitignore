@@ -1,0 +1,35 @@
+# Compilados de C++
+*.out
+*.o
+*.obj
+*.exe
+
+# Arquivos de depuração
+*.log
+*.dSYM/
+*.stackdump
+
+# Diretórios de build
+/build/
+/bin/
+/debug/
+/release/
+
+# Arquivos temporários do sistema
+*.tmp
+*.temp
+*.swp
+
+# Arquivos do Visual Studio Code
+.vscode/
+*.code-workspace
+
+# Arquivos do CLion / JetBrains
+.idea/
+
+# Arquivos do Windows
+Thumbs.db
+Desktop.ini
+
+# Arquivos do macOS
+.DS_Store
