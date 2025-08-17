@@ -1,16 +1,16 @@
-# Project: programa-a
+# Project: programa-b
 # Makefile created by Dev-C++ 5.11
 
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-RES      = programa-a_private.res
-OBJ      = programa-a.o $(RES)
-LINKOBJ  = programa-a.o $(RES)
+RES      = programa-b_private.res
+OBJ      = main.o $(RES)
+LINKOBJ  = main.o $(RES)
 LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
 INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
-BIN      = programa-a.exe
+BIN      = programa-b.exe
 CXXFLAGS = $(CXXINCS) 
 CFLAGS   = $(INCS) 
 RM       = rm.exe -f
@@ -25,9 +25,9 @@ clean: clean-custom
 $(BIN): $(OBJ)
 	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
 
-programa-a.o: programa-a.cpp
-	$(CPP) -c programa-a.cpp -o programa-a.o $(CXXFLAGS)
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
 
-programa-a_private.res: programa-a_private.rc 
-	$(WINDRES) -i programa-a_private.rc --input-format=rc -o programa-a_private.res -O coff 
+programa-b_private.res: programa-b_private.rc 
+	$(WINDRES) -i programa-b_private.rc --input-format=rc -o programa-b_private.res -O coff 
 

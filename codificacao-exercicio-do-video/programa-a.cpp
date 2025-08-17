@@ -16,7 +16,7 @@ int main() {
 
         if (N == 0 && M == 0) {
         	cout << "Usar novamente(s/n)?";
-        	cin >> "\n" r;
+        	cin >> r;
 		}
 
         vector<int> temp(N);
@@ -42,7 +42,7 @@ int main() {
             maior = max(maior, media);
         }
 
-        cout << "\n--- Resultado ---\n";
+        cout << "\n Resultado \n";
         cout << "Teste " << caso << "\n";
         cout << "Menor media = " << menor << "\n";
         cout << "Maior media = " << maior << "\n\n";
