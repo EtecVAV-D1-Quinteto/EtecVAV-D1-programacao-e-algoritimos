@@ -1,10 +1,19 @@
-# Compilados C++
+# Compilados
 *.exe
 *.o
 *.out
 
+# Arquivos temporários do Dev-C++
+*.dev
+*.layout
+*.private.h
+*.private.rc
+*.private.res
+*.obj
+
 # Logs
 *.log
 
-# Diretórios de build
-/build/
+# Backup do Windows
+*.bak
+Thumbs.db
