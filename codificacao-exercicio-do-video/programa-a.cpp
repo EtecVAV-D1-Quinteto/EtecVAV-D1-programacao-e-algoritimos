@@ -1,55 +1,36 @@
 #include <iostream>
-#include <vector>
-#include <algorithm>
+#include <string>
+#include <stdio.h>
+#include <cmath>
+#include <cstdlib>
+
 using namespace std;
 
-int main() {
-    int N, M;
-    int caso = 1;
-    char r='s';
-    
-    while(r=='s'){
-
-    while (true) {
-        cout << "Digite N (quantidade de temperaturas) e M (tamanho do intervalo), ou 0 0 para sair: ";
-        cin >> N >> M;
-
-        if (N == 0 && M == 0) {
-        	cout << "Usar novamente(s/n)?";
-        	cin >> r;
-		}
-
-        vector<int> temp(N);
-
-        cout << "Agora digite " << N << " temperaturas (uma por linha ou separadas por espaço):\n";
-        for (int i = 0; i < N; i++) {
-            cin >> temp[i];
+int main(int argc, char** argv) {
+    string linha;
+    int primo,x;
+    bool isprimo;
+    while(true)
+    {
+        getline(cin,linha);
+        if(linha == "0 0"||linha=="0"){
+            break;
         }
-
-        int menor, maior;
-        int soma = 0;
-        for (int i = 0; i < M; i++) soma += temp[i];
-        int media = soma / M;
-        menor = maior = media;
-
-        for (int i = 1; i <= N - M; i++) {
-            soma = 0;
-            for (int j = 0; j < M; j++) {
-                soma += temp[i + j];
+        
+        primo = atoi(linha.c_str());
+        isprimo = true;
+        
+        for(int i=0; i <= primo; i++)
+        {
+            while(i <= primo){
+            	cin >> x;
+			}
             }
-            media = soma / M;
-            menor = min(menor, media);
-            maior = max(maior, media);
         }
-
-        cout << "\n Resultado \n";
-        cout << "Teste " << caso << "\n";
-        cout << "Menor media = " << menor << "\n";
-        cout << "Maior media = " << maior << "\n\n";
-        caso++;
-    }
-
-    cout << "Programa encerrado!\n";
-}
-	return 0;
+        if(primo > 1){
+            if(isprimo){
+                cout<<primo;
+            }
+        }
+    return 0;
 }
