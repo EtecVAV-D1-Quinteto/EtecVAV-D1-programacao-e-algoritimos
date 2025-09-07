@@ -8,7 +8,7 @@ int main(int argc, char** argv) {
     int indice;
     char chute, n = 's';
     int tentativas;
-    int t;
+    int t,i;
     bool ganhar, acertou;
 
     while (n == 's') {
@@ -22,37 +22,36 @@ int main(int argc, char** argv) {
 
         t = 6;
         while (t > 0 || !ganhar) {
-
             ganhar = (palavra_escolhida == palavra_oculta);
-
+            std::cout << "\n------Forca (esportes)------\n\n\n" << "     " << palavra_oculta;
             if (ganhar) {
                 std::cout << "\nParabens voce ganhou!!\nA palavra era " << palavra_oculta;
                 break;
             }
-
             if (t == 0) {
                 std::cout << "Voce perdeu, suas tentativas acabaram\nA palavra era " << palavra_escolhida;
                 break;
             }
-
-            std::cout << "\n------Forca (esportes)------\n\n\n" << "     " << palavra_oculta;
-
+			
             std::cout << "\nDigite uma letra: ";
+			
             std::cin >> chute;
-
-            bool acertou = false;
-            for (int i = 0; i < palavra_escolhida.size(); i++) {
+			
+            acertou = false;
+            i=0;
+            while (i < palavra_escolhida.size()) {
                 if (palavra_escolhida[i] == chute) {
                     palavra_oculta[i] = chute;
                     acertou = true;
                 }
+                i=i+1;
             }
 
             if (!acertou) {
-                t--; 
+                t=t-1; 
             }
 
-            std::cout << "\nVoce tem " << t << " tentativas restantes\n";
+          std::cout << "\nVoce tem " << t << " tentativas restantes\n";
         }
 
         std::cout << "\n\nJogar novamente(s/n)?";
