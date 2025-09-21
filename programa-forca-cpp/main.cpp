@@ -4,6 +4,23 @@
 #include <ctime>
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
+void aparecerletra(char chute, std::string &palavra_escolhida, std::string &palavra_oculta, int &t) {
+    bool acertou = false;
+
+    for (int i = 0; i < palavra_escolhida.size(); i++) {
+        if (palavra_escolhida[i] == chute) {
+            palavra_oculta[i] = chute;
+            acertou = true;
+        }
+    }
+
+    if (!acertou) {
+        t = t - 1;
+    }
+    std::cout << "\nVoce tem " << t << " tentativas restantes\n";
+}
+
+
 int main(int argc, char** argv) {
     int indice;
     char chute, n = 's';
@@ -11,10 +28,11 @@ int main(int argc, char** argv) {
     int t,i;
     bool ganhar, acertou;
 
+srand(time(0));
+
     while (n == 's') {
 
         std::vector<std::string> palavra = {"basquete", "futebol", "volei", "handball", "tenis", "natacao", "boxe", "futsal"};
-        srand(time(0));
         indice = rand() % palavra.size();
 
         std::string palavra_escolhida = palavra[indice];
@@ -37,21 +55,9 @@ int main(int argc, char** argv) {
 			
             std::cin >> chute;
 			
-            acertou = false;
-            i=0;
-            while (i < palavra_escolhida.size()) {
-                if (palavra_escolhida[i] == chute) {
-                    palavra_oculta[i] = chute;
-                    acertou = true;
-                }
-                i=i+1;
-            }
+        aparecerletra(chute, palavra_escolhida, palavra_oculta, t);
 
-            if (!acertou) {
-                t=t-1; 
-            }
-
-          std::cout << "\nVoce tem " << t << " tentativas restantes\n";
+          
         }
 
         std::cout << "\n\nJogar novamente(s/n)?";
