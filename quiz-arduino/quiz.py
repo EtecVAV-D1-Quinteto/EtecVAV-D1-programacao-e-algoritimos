@@ -108,6 +108,56 @@ perguntas =[
         "pergunta": "Um exemplo de uso educacional do Arduino é:",
         "alternativas": ["a) Ensinar fundamentos de eletrônica e programação por meio de experimentos práticos", "b) Substituir quadros e cadernos por circuitos eletrônicos", "c) Executar softwares de edição de vídeo", "d) Realizar cálculos complexos de engenharia sem programação", "e) Apenas montar brinquedos sem relação com aprendizado"],
         "certa": "a"
+    },
+     {
+        "pergunta": "Qual das opções abaixo pode ser executada usando o comando loop()?",
+        "alternativas": ["a) Definir o começo de um comando", "b) Fazer o LED piscar repetidamente", "c) Encerrar o programa", "d) Definir o intervalo de um motor automático", "e) Fornecer um sinal para o motor"],
+        "certa": "b"
+    },
+    {
+        "pergunta": "Sobre a função setup(), qual é a afirmação correta?",
+        "alternativas": ["a) É usada para finalizar o programa", "b) Pode ser usada várias vezes durante o processo Arduino", "c) Prepara o programa para ser executado", "d) O nome 'setup' não é fixo e pode ser alterado", "e) Não é necessário usá-lo todas as vezes"],
+        "certa": "c"
+    },
+    {
+        "pergunta": "As palavras para comando utilizadas na programação Arduino são escritas em:",
+        "alternativas": ["a) Português", "b) Inglês", "c) Espanhol", "d) Francês", "e) Uma linguagem própria da programação"],
+        "certa": "b"
+    },
+    {
+        "pergunta": "Sobre a função delay(), assinale a alternativa incorreta:",
+        "alternativas": ["a) Define um intervalo no meio da execução", "b) A unidade de medida usada é em minutos", "c) Durante o delay o programa não faz nada, senão uma pausa", "d) É útil para projetos simples", "e) No delay os botões não vão exercer sua função"],
+        "certa": "b"
+    },
+    {
+        "pergunta": "Sobre as bibliotecas no Arduino, qual a alternativa incorreta?",
+        "alternativas": ["a) São escritas em C/C++", "b) Ficam armazenadas em pastas específicas dentro da IDE", "c) Existem bibliotecas que podem ser instaladas manualmente", "d) São códigos quase prontos e que precisam ser ajustados", "e) Já vêm totalmente prontas e só precisam ser utilizadas"],
+        "certa": "e"
+    },
+    {
+        "pergunta": "Quais das funções abaixo são obrigatórias no Arduino?",
+        "alternativas": ["a) loop() e input()", "b) output() e input()", "c) delay() e setup()", "d) loop() e setup()", "e) output() e delay()"],
+        "certa": "d"
+    },
+    {
+        "pergunta": "Qual das palavras abaixo está incorreta em relação ao seu significado atribuído no Arduino?",
+        "alternativas": ["a) int = número inteiro", "b) float = número decimal", "c) char = fração", "d) boolean = verdadeiro/falso", "e) const = cria constantes fixas"],
+        "certa": "c"
+    },
+    {
+        "pergunta": "Qual dos comandos abaixo não é usado em Arduino?",
+        "alternativas": ["a) import", "b) define", "c) include", "d) return", "e) break"],
+        "certa": "a"
+    },
+    {
+        "pergunta": "Dentre as opções abaixo, qual não está corretamente relacionada entre seu comando e área de atuação?",
+        "alternativas": ["a) Controle de fluxo = if, while", "b) Tempo = delay()", "c) Biblioteca = setup(), loop()", "d) Entrada e saída = pinMode()", "e) Variáveis = int, boolean"],
+        "certa": "c"
+    },
+    {
+        "pergunta": "Qual a maneira correta de repetir várias vezes uma ação no Arduino?",
+        "alternativas": ["a) loop()", "b) delay()", "c) setup()", "d) pinMode()", "e) pause()"],
+        "certa": "a"
     }
 ]
 
@@ -124,12 +174,12 @@ while True:
         # Escolher as 20 perguntas aleatoriamente
         quiz = random.sample(perguntas, 10)
 
-        # Mostrar as perguntas e respostas
+        # Mostrar as perguntas, alternativas e respostas
         for p in quiz:
             print("\n"+p["pergunta"])
             for opcao in p["alternativas"]:
                 print(opcao)
-            reposta = input("Sua resposta(digite 00 para encerrar): ")
+            reposta = input("Sua resposta: ")
 
             if reposta == p["certa"]:
                 print("\nAlternativa certa!! Mais 0.5 pontos\n")
@@ -142,7 +192,7 @@ while True:
     elif resposta == "2":
         print("\n\n\nNo quiz haverá 20 perguntas sorteadas sobre Arduíno")
         print("\nTerão alternativas de A até E")
-        print("\nA cada questao que você acertar, irá ganhar 0,5 pontos, e a pontuação máxima é 10, ao final do quiz a pontuação será exibida na tela")
+        print("\nA cada questão que você acertar, irá ganhar 0,5 pontos, e a pontuação máxima é 10, ao final do quiz a pontuação será exibida na tela")
         print("\nAs perguntas terão 10 temas, são eles:\n1-Histórico\n2-Modelos e famílias de placas\n3-componentes e arquiteturas básicas\n4-Conexões, portas e sinais\n5-Estruturas de código\n6-Principais comandos e funções da IDE Arduíno\n7-Sensores,atuadoras e shields\n8-Comunicações\n9-Boas práticas e segurança elétrica\n10-Casos de uso e aplicações práticas")   
     
     # Ecerrar o programa
